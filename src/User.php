@@ -34,6 +34,13 @@ class User {
         return $this->getMain()->getAPI()->sendMessage($this->getId(), $text);
     }
 
+    /*
+     * Available types:
+     * - Photo
+     * - Audio
+     * - Document
+     * and other: https://core.telegram.org/bots/api
+     */
     public function sendMedia(string $type, string $url, ?string $title = null) : array {
         return $this->getMain()->getAPI()->sendMedia($type, $this->getId(), $url, $title);
     }
