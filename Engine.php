@@ -4,7 +4,7 @@
 
 require_once 'autoload.php';
 
-$bot = new \telegram\bot\Bot('1153503634:AAEHMED_hTSyEEm8l3DqWKZSVbWVfCnpJAg');
+$bot = new \telegram\bot\Bot('token');
 $longpoll = $bot->getLongPoll();
 
 while (true) {
