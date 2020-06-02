@@ -1,18 +1,5 @@
-# TelegramLib
-Библиотека для упрощенной разработки ботов Telegram.
+<?php
 
-# Скачивание
-```sh
-$ git clone https://github.com/bitnooob/TelegramLib.git
-```
-
-# Подключение
-```php
-$bot = new \telegram\bot\Bot('token');
-```
-
-# Пример
-```php
 require_once 'autoload.php';
 
 $bot = new \telegram\bot\Bot('1153503634:AAEHMED_hTSyEEm8l3DqWKZSVbWVfCnpJAg');
@@ -32,6 +19,8 @@ while (true) {
 
         $user = $bot->getUser($user_id);
         $user->sendMessage('hello');
+
+        $bot->getLogger()->info('hello');
+        $bot->getLogger()->error('hello');
     }
 }
-```
