@@ -1,5 +1,7 @@
 <?php
 
+// for example
+
 require_once 'autoload.php';
 
 $bot = new \telegram\bot\Bot('1153503634:AAEHMED_hTSyEEm8l3DqWKZSVbWVfCnpJAg');
@@ -19,8 +21,5 @@ while (true) {
 
         $user = $bot->getUser($user_id);
         $user->sendMessage('hello');
-
-        $bot->getLogger()->info('hello');
-        $bot->getLogger()->error('hello');
     }
 }
