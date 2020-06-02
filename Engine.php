@@ -21,7 +21,7 @@ while (true) {
 
         $user = $bot->getUser($user_id);
         $user->sendMessage('hello');
-        //$user->sendPhoto('https://cdnimg.rg.ru/img/content/178/22/40/kotik_d_850.jpg', 'hello');
-        //$user->sendAudio('https://mp3melodii.ru/files_site_02/001/mellen_gi_remix_na_budilnik.mp3', 'hello');
+        //$user->sendMedia('Photo', 'https://cdnimg.rg.ru/img/content/178/22/40/kotik_d_850.jpg', 'hello');
+        //$user->sendMedia('Audio', 'https://mp3melodii.ru/files_site_02/001/mellen_gi_remix_na_budilnik.mp3', 'hello');
     }
 }

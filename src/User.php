@@ -34,12 +34,8 @@ class User {
         return $this->getMain()->getAPI()->sendMessage($this->getId(), $text);
     }
 
-    public function sendPhoto(string $url, ?string $title = null) : array {
-        return $this->getMain()->getAPI()->sendMedia('Photo', $this->getId(), $url, $title);
-    }
-
-    public function sendAudio(string $url, ?string $title = null) : array {
-        return $this->getMain()->getAPI()->sendMedia('Audio', $this->getId(), $url, $title);
+    public function sendMedia(string $type, string $url, ?string $title = null) : array {
+        return $this->getMain()->getAPI()->sendMedia($type, $this->getId(), $url, $title);
     }
 
 }
