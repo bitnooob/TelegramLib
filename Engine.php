@@ -21,6 +21,5 @@ while (true) {
 
         $user = $bot->getUser($user_id);
         $user->sendMessage('hello');
-        //$user->sendPhoto('https://cdnimg.rg.ru/img/content/178/22/40/kotik_d_850.jpg', 'hello');
     }
 }

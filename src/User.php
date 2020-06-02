@@ -38,4 +38,8 @@ class User {
         return $this->getMain()->getAPI()->sendPhoto($this->getId(), $url, $title);
     }
 
+    public function sendAudio(string $url, ?string $title = null) : array {
+        return $this->getMain()->getAPI()->sendAudio($this->getId(), $url, $title);
+    }
+
 }
