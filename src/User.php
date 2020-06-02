@@ -34,4 +34,8 @@ class User {
         return $this->getMain()->getAPI()->sendMessage($this->getId(), $text);
     }
 
+    public function sendPhoto(string $url, ?string $title = null) : array {
+        return $this->getMain()->getAPI()->sendPhoto($this->getId(), $url, $title);
+    }
+
 }

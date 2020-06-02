@@ -31,4 +31,16 @@ class API {
         ]);
     }
 
+    public function sendPhoto(int $id, string $url, ?string $title = null) : array {
+        $params = [
+            'chat_id' => $id,
+            'photo' => $url,
+        ];
+
+        if ($title !== null)
+            $params['caption'] = $title;
+
+        return $this->getMain()->getRequest()->send('sendPhoto', $params);
+    }
+
 }
