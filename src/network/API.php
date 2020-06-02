@@ -31,28 +31,16 @@ class API {
         ]);
     }
 
-    public function sendPhoto(int $id, string $url, ?string $title = null) : array {
+    public function sendMedia(string $type, int $id, string $url, ?string $title = null) : array {
         $params = [
             'chat_id' => $id,
-            'photo' => $url,
+            strtolower($type) => $url,
         ];
 
         if ($title !== null)
             $params['caption'] = $title;
 
-        return $this->getMain()->getRequest()->send('sendPhoto', $params);
-    }
-
-    public function sendAudio(int $id, string $url, ?string $title = null) : array {
-        $params = [
-            'chat_id' => $id,
-            'audio' => $url,
-        ];
-
-        if ($title !== null)
-            $params['caption'] = $title;
-
-        return $this->getMain()->getRequest()->send('sendAudio', $params);
+        return $this->getMain()->getRequest()->send('send' . $type, $params);
     }
 
 }

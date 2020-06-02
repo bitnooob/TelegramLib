@@ -35,11 +35,11 @@ class User {
     }
 
     public function sendPhoto(string $url, ?string $title = null) : array {
-        return $this->getMain()->getAPI()->sendPhoto($this->getId(), $url, $title);
+        return $this->getMain()->getAPI()->sendMedia('Photo', $this->getId(), $url, $title);
     }
 
     public function sendAudio(string $url, ?string $title = null) : array {
-        return $this->getMain()->getAPI()->sendAudio($this->getId(), $url, $title);
+        return $this->getMain()->getAPI()->sendMedia('Audio', $this->getId(), $url, $title);
     }
 
 }
