@@ -10,6 +10,7 @@ declare(strict_types=1);
 namespace telegram\bot;
 
 use telegram\bot\network\API;
+use telegram\bot\network\ButtonManager;
 use telegram\bot\network\LongPoll;
 use telegram\bot\network\Request;
 use telegram\bot\utils\Logger;
@@ -64,6 +65,10 @@ class Bot {
 
     public function getLogger() : Logger {
         return new Logger;
+    }
+
+    public function getButtonManager() : ButtonManager {
+        return new ButtonManager;
     }
 
 }

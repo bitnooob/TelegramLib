@@ -24,11 +24,16 @@ class API {
         $this->main = $main;
     }
 
-    public function sendMessage(int $id, string $text) : array {
-        return $this->getMain()->getRequest()->send('sendMessage', [
+    public function sendMessage(int $id, string $text, ?array $markup = null) : array {
+        $params = [
             'chat_id' => $id,
             'text' => $text,
-        ]);
+        ];
+
+        if ($markup !== null)
+            $params['reply_markup'] = json_encode($markup);
+
+        return $this->getMain()->getRequest()->send('sendMessage', $params);
     }
 
     public function sendMedia(string $type, int $id, string $url, ?string $title = null) : array {

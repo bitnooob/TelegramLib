@@ -30,8 +30,8 @@ class User {
         $this->id = $id;
     }
 
-    public function sendMessage(string $text) : array {
-        return $this->getMain()->getAPI()->sendMessage($this->getId(), $text);
+    public function sendMessage(string $text, ?array $markup = null) : array {
+        return $this->getMain()->getAPI()->sendMessage($this->getId(), $text, $markup);
     }
 
     /*
