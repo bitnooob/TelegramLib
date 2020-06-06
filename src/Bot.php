@@ -9,6 +9,7 @@ declare(strict_types=1);
 
 namespace telegram\bot;
 
+use telegram\bot\modules\Modules;
 use telegram\bot\network\API;
 use telegram\bot\network\ButtonManager;
 use telegram\bot\network\LongPoll;
@@ -69,6 +70,10 @@ class Bot {
 
     public function getButtonManager() : ButtonManager {
         return new ButtonManager;
+    }
+
+    public function getModules() : Modules {
+        return new Modules;
     }
 
 }
